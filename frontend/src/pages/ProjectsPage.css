@@ -1,0 +1,348 @@
+/* ===== Projects Page — Premium Styles ===== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- page shell ---------- */
+.projects-page {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+/* ---------- header ---------- */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.projects-header-left .projects-eyebrow {
+  margin: 0 0 0.35rem;
+  color: #7dd3fc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.projects-header-left h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: #f8fafc;
+}
+
+.projects-header-left .projects-count {
+  margin: 0.3rem 0 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.projects-header a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.projects-header a:hover {
+  color: #f8fafc;
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+.projects-header a svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ---------- create panel ---------- */
+.projects-create-panel {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 12px 32px rgba(2, 8, 23, 0.25);
+  animation: fadeUp 0.5s ease both 0.06s;
+}
+
+.projects-create-panel h3 {
+  margin: 0 0 1rem;
+  color: #f8fafc;
+  font-size: 1.05rem;
+}
+
+.create-form {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.create-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 160px;
+}
+
+.create-field label {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.create-field input {
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8fafc;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.create-field input:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.create-field input::placeholder {
+  color: #475569;
+}
+
+.create-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.3rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: white;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.create-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+}
+
+.create-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.create-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.create-error {
+  width: 100%;
+  margin: 0.5rem 0 0;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.65rem;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  font-size: 0.85rem;
+}
+
+/* ---------- project cards grid ---------- */
+.project-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.15rem;
+  animation: fadeUp 0.55s ease both 0.12s;
+}
+
+.pcard {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 12px 28px rgba(2, 8, 23, 0.2);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.pcard:hover {
+  border-color: rgba(148, 163, 184, 0.25);
+  transform: translateY(-2px);
+}
+
+.pcard-name {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+  color: #f8fafc;
+}
+
+.pcard-owner {
+  margin: 0 0 0.85rem;
+  color: #94a3b8;
+  font-size: 0.88rem;
+}
+
+.pcard-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+/* status pill (reuse dashboard pattern) */
+.status-pill {
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.status-pill.todo       { background: rgba(56, 189, 248, 0.15); color: #7dd3fc; }
+.status-pill.inprogress { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.status-pill.review     { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+.status-pill.done       { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+.pcard-due {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.pcard-actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.pcard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.pcard-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #f8fafc;
+}
+
+.pcard-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.pcard-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ---------- edit mode ---------- */
+.pcard-edit {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.pcard-edit input {
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8fafc;
+  font-size: 0.9rem;
+}
+
+.pcard-edit input:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.pcard-edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ---------- empty state ---------- */
+.projects-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 3.5rem 1rem;
+  text-align: center;
+  color: #64748b;
+  animation: fadeUp 0.5s ease both 0.1s;
+}
+
+.projects-empty svg {
+  width: 48px;
+  height: 48px;
+  stroke-width: 1.5;
+  opacity: 0.45;
+  margin-bottom: 0.25rem;
+}
+
+.projects-empty p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 700px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .create-form {
+    flex-direction: column;
+  }
+
+  .project-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

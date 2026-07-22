@@ -1,0 +1,337 @@
+/* ===== Project Detail Page — Premium Styles ===== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- page shell ---------- */
+.detail-page {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+/* ---------- project hero ---------- */
+.detail-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.detail-hero-left .detail-eyebrow {
+  margin: 0 0 0.35rem;
+  color: #7dd3fc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.detail-hero-left h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: #f8fafc;
+}
+
+.detail-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.detail-owner {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* status pill (consistent across app) */
+.status-pill {
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.status-pill.todo       { background: rgba(56, 189, 248, 0.15); color: #7dd3fc; }
+.status-pill.inprogress { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.status-pill.review     { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+.status-pill.done       { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+.detail-hero-right {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.detail-link:hover {
+  color: #f8fafc;
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+.detail-link svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ---------- two-column layout ---------- */
+.detail-body {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  animation: fadeUp 0.5s ease both 0.08s;
+}
+
+/* ---------- glass panels ---------- */
+.detail-panel {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 12px 32px rgba(2, 8, 23, 0.25);
+}
+
+.detail-panel h3 {
+  margin: 0 0 1rem;
+  color: #f8fafc;
+  font-size: 1.05rem;
+}
+
+/* ---------- create task form ---------- */
+.create-task-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ctf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ctf-field label {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.ctf-field input {
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8fafc;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ctf-field input:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.ctf-field input::placeholder {
+  color: #475569;
+}
+
+.ctf-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1.2rem;
+  margin-top: 0.25rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: white;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ctf-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+}
+
+.ctf-submit svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.ctf-error {
+  margin: 0.5rem 0 0;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.65rem;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  font-size: 0.84rem;
+}
+
+/* ---------- task list ---------- */
+.detail-task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.dtask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.15rem;
+  border-radius: 0.9rem;
+  background: rgba(248, 250, 252, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.dtask:hover {
+  background: rgba(248, 250, 252, 0.07);
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+.dtask-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.dtask-title {
+  font-weight: 600;
+  color: #f1f5f9;
+  font-size: 0.92rem;
+}
+
+.dtask-assignee {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.dtask-right {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.dtask-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.55rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.dtask-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #f8fafc;
+}
+
+.dtask-btn.move-btn:hover {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+}
+
+.dtask-btn.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.dtask-btn svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ---------- empty state ---------- */
+.detail-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.detail-empty svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.5;
+  opacity: 0.45;
+}
+
+.detail-empty p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- loading ---------- */
+.detail-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #94a3b8;
+  animation: fadeUp 0.4s ease both;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 800px) {
+  .detail-body {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
